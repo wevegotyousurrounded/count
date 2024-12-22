@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Countdown</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function calculateDaysUntilBirthday() {
+      const birthdayString = '2003-01-20'; // birthdate (format: YYYY-MM-DD)
+      const birthday = new Date(birthdayString);
+      const now = new Date();
+      let nextBirthday = new Date(now.getFullYear(), birthday.getMonth(), birthday.getDate());
+      if (nextBirthday < now) {
+        nextBirthday.setFullYear(now.getFullYear() + 1);
+      }
+      const difference = nextBirthday - now;
+      const daysLeft = Math.ceil(difference / (1000 * 60 * 60 * 24));
+      const messageElement = document.getElementById('days-until');
+      if (isNaN(daysLeft)) {
+        messageElement.textContent = 'Invalid birthday date provided!';
+        messageElement.style.color = 'red';
+      } else {
+        messageElement.textContent = `${daysLeft} days left until my birthday!`;
+        if (daysLeft < 30) {
+          messageElement.style.color = 'red';
+        } else if (daysLeft >= 60 && daysLeft <= 180) {
+          messageElement.style.color = 'green';
+        } else {
+          messageElement.style.color = 'blue';
+        }
+      }
+    }
+    window.onload = calculateDaysUntilBirthday;
+  </script>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="Website Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="first_page.html">Home</a></li>
+          <li><a href="another_page.html">About Me</a></li>
+          <li><a href="form.html">Contact</a></li>
+          <li><a href="birthday.html">Birthday</a></li>
+		  <li><a href="countdown.html" class="active-link">Birthday Countdown</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="birthday-section">
+      <h1>Birthday Countdown</h1>
+      <p id="days-until" style="font-size: 1.5rem; color: black;">Calculating...</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Avneet Kaur. All rights reserved.</p>
+  </footer>
+</body>
+</html>

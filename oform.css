@@ -1,0 +1,212 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('images/background.png');
+  background-size: cover;
+  background-position: center;
+  color: #333;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem 2rem;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+  color: #00aced;
+}
+
+.navbar ul li a.active-link {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Form Container Styles */
+.form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.form-container h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: #004aad;
+  margin-bottom: 1rem;
+}
+
+.form-container p {
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.form-container label {
+  font-size: 1rem;
+  color: #004aad;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+  outline: none;
+  border-color: #004aad;
+  box-shadow: 0 0 5px rgba(0, 74, 173, 0.5);
+}
+
+.form-container .form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-container button {
+  background-color: #004aad;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Checkbox Styling */
+.inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.inline input[type="checkbox"] {
+  margin: 0;
+  transform: scale(1.2);
+}
+
+.inline label {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Birthday Page Styling */
+body.birthday-page {
+  background-image: url('images/background1.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #333; 
+}
+
+.birthday-section {
+  text-align: center;
+  margin: 50px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  max-width: 800px;
+}
+
+.birthday-section h1 {
+  font-size: 2rem;
+  color: #004aad;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite; 
+}
+
+.birthday-section p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.video-container video {
+  width: 100%;
+  max-width: 800px;
+  border: 5px solid #004aad;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .form-container,
+  .birthday-section {
+    padding: 1rem;
+    margin: 10px auto;
+  }
+
+  .video-container video {
+    width: 100%;
+  }
+}
+
+/* Animation for Pulse Effect */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    color: #004aad;
+  }
+  50% {
+    transform: scale(1.1);
+    color: #ff9900;
+  }
+  100% {
+    transform: scale(1);
+    color: #004aad;
+  }
+}

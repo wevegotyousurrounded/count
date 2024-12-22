@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Website</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styling for the date-time box */
+    #date-time {
+      background-color: white;
+      color: black;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Adds depth */
+      border: 1px solid #ccc; /* Optional border for clean design */
+      text-align: right; /* Align text to the right inside the box */
+      margin: 10px 15px; /* Adds spacing around the box */
+    }
+  </style>
+  <script>
+    // Function to create a multicolor background effect
+    function changeBackgroundColor() {
+      const colors = [
+        'linear-gradient(45deg, #ff9a9e, #fad0c4)',
+        'linear-gradient(45deg, #a1c4fd, #c2e9fb)',
+        'linear-gradient(45deg, #fbc2eb, #a6c1ee)',
+        'linear-gradient(45deg, #ffecd2, #fcb69f)',
+        'linear-gradient(45deg, #d4fc79, #96e6a1)',
+      ];
+      let index = 0;
+      setInterval(() => {
+        document.body.style.backgroundImage = colors[index];
+        document.body.style.backgroundSize = 'cover'; // Ensures the background covers the screen
+        document.body.style.backgroundPosition = 'center'; // Centers the gradient
+        index = (index + 1) % colors.length; // Cycle through colors
+      }, 2000); // Change every 2 seconds
+    }
+
+    // Function to display current date and time
+    function displayDateTime() {
+      const dateTimeElement = document.getElementById('date-time');
+      setInterval(() => {
+        const now = new Date();
+        dateTimeElement.textContent = now.toLocaleString();
+      }, 1000); // Update every second
+    }
+
+    // Initialize functions on page load
+    window.onload = function () {
+      changeBackgroundColor(); // Start the background change
+      displayDateTime(); // Start the date-time update
+    };
+  </script>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <!-- Website Logo -->
+        <img src="images/logo.png" alt="Website Logo">
+      </div>
+      <nav>
+        <ul>
+          <!-- Navigation Links -->
+          <li><a href="first_page.html" class="active-link">Home</a></li>
+          <li><a href="another_page.html">About Me</a></li>
+          <li><a href="form.html">Contact</a></li>
+          <li><a href="birthday.html">Birthday</a></li>
+          <li><a href="countdown.html">Birthday Countdown</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Static Date and Time Box -->
+  <div id="date-time">Loading...</div>
+
+  <!-- Main Content -->
+  <main class="background-section">
+    <!-- Hero Section -->
+    <div class="hero-content">
+      <!-- Image Section -->
+      <div class="sample-image">
+        <a href="another_page.html" title="Click to visit another page">
+          <img src="images/sample.jpeg" alt="Sample Image">
+        </a>
+      </div>
+      <!-- Text Section -->
+      <div class="text-content">
+        <h1>Hi! I am Avneet.</h1>
+        <p>Welcome to my personal space, where I share a bit about myself and my interests. I’m a computer science student with a curious mind and a passion for creating and exploring. This site is a reflection of who I am—both as a learner and as someone who enjoys diving into new hobbies and ideas.</p>
+        <p>When I’m not coding or working on tech projects, I spend my time reading, experimenting with digital art, or crocheting as a way to unwind. I also enjoy gaming and exploring new technologies.</p>
+        <h2>Features of This Website</h2>
+        <ul>
+          <li>A showcase of my coding projects and personal experiments</li>
+          <li>Book recommendations and thoughts on topics I’m passionate about</li>
+          <li>Updates on my latest interests, from art to tech</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Avneet Kaur. All rights reserved.</p>
+  </footer>
+</body>
+</html>
